@@ -163,8 +163,8 @@ subroutine ndrop_init
       !! Ghosh Adjustments
       !f1(m)          = 0.5_r8*exp(2.5_r8*alogsig(m)*alogsig(m))
       !f2(m)          = 1._r8 + 0.25_r8*alogsig(m)
-      f1(m) = 0.97
-      f2(m) = 0.53
+      f1(m) = 0.60
+      f2(m) = 0.60
 
       voltonumblo_amode(m) = 1._r8 / ( (pi/6._r8)*                          &
                              (dgnumlo_amode(m)**3._r8)*exp(4.5_r8*alogsig(m)**2._r8) )
@@ -1679,7 +1679,7 @@ subroutine maxsat(zeta,eta,nmode,smc,smax)
 
          !! Ghosh Adjustments
          if (g1.gt.1) then
-            g1=g1**1.01
+            g1=g1**0.96
          else if (g1.le.1) then
             g1=g1*g1sqrt
          end if
